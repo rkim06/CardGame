@@ -4,6 +4,7 @@ public class Deck {
     private ArrayList<Card> cards;
     private int cardsLeft;
 
+    //constructor
     public Deck(String[] ranks, String[] suits, int[] values) {
         for(int i = 0; i<ranks.length; i++){
             for(int j = 0; j<suits.length; j++){
