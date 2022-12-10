@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class Player {
 
     private String name;
-    private int[] cards;
-    private int[] hand;
+
+    private ArrayList<Card> hand;
     private int points;
 
     public Player(String name) {
@@ -10,7 +12,7 @@ public class Player {
         points = 0;
     }
 
-    public Player(String name, int[] hand) {
+    public Player(String name, ArrayList<Card> hand) {
         this.name = name;
         this.hand = hand;
         points = 0;
@@ -20,11 +22,7 @@ public class Player {
         return name;
     }
 
-    public int[] getCards() {
-        return cards;
-    }
-
-    public int[] getHand() {
+    public ArrayList<Card> getHand() {
         return hand;
     }
 
@@ -32,15 +30,23 @@ public class Player {
         return points;
     }
 
-    public void addPoints(){
-
+    public void addPoints(int point){
+        points += point;
     }
 
-    public void addCard(){
+    public void addCard(Card cd){
+        hand.add(cd);
+    }
 
+    public String printHand() {
+        String hand = "";
+        for (int i = 0; i < hand.size(); i++) {
+            hand = hand + String.valueOf(hand.get(i))+" ");
+        }
     }
 
     public String toString(){
-        return rank +" of "+ suit;
+        return name +" has "+ points +" points \n" +
+                name + "'s cards: "printHand();
     }
 }
