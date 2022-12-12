@@ -34,6 +34,15 @@ public class Deck {
     }
 
     public void shuffle(){
+        Card temp = new Card ("", "", 0);
+        for(int i=0; i<cards.size(); i++){
+            int r = (int)(Math.random()*cards.size())+1;
 
+            //how to get just the value
+            temp = cards.get(i);
+            cards.set(i, cards.get(r));
+            cards.set(r, temp);
+
+        }
     }
 }

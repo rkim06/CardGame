@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Player {
 
     private String name;
-
     private ArrayList<Card> hand;
     private int points;
 
@@ -38,15 +37,8 @@ public class Player {
         hand.add(cd);
     }
 
-    public String printHand() {
-        String hand = "";
-        for (int i = 0; i < hand.size(); i++) {
-            hand = hand + String.valueOf(hand.get(i))+" ");
-        }
-    }
-
     public String toString(){
         return name +" has "+ points +" points \n" +
-                name + "'s cards: "printHand();
+                name + "'s cards: "+hand;
     }
 }
