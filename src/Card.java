@@ -8,15 +8,17 @@ public class Card {
         this.suit = suit;
         this.point = point;
     }
-
+    //returns rank of card
     public String getRank() {
         return rank;
     }
 
+    //returns suit of card
     public String getSuit() {
         return suit;
     }
 
+    //returns num of points
     public int getPoint() {
         return point;
     }
