@@ -89,31 +89,38 @@ public class Game {
         printWinner(p1, p2);
     }
 
+    //if there is a tie, place another card down
     public void tieBreak(Card card1, Card card2){
         int points1 = card1.getPoint();
         int points2 = card2.getPoint();
+
+        //add a point to the player that wins the round
         if(points1 > points2){
             p1.addPoints(1);
         }
         else if(points1 < points2){
             p2.addPoints(1);
         }
+        //or else place another card
         else{
             tieBreak(card1, card2);
         }
     }
 
+    //prints the winner of the game based on the number of points
     public void printWinner(Player p1, Player p2){
         System.out.println(p1.getName()+": "+p1.getPoints());
         System.out.println(p2.getName()+": "+p2.getPoints());
         System.out.println();
 
+        //the player with the most points wins
         if (p1.getPoints() > p2.getPoints()){
             System.out.println(p1.getName()+" won the game!!!");
         }
         else if (p1.getPoints() < p2.getPoints()){
             System.out.println(p1.getName()+" won the game!!!");
         }
+        //if points are equal, no one wins
         else{
             System.out.println("No one won the game :(");
         }
