@@ -6,6 +6,10 @@ public class Deck {
 
     //constructor
     public Deck(String[] ranks, String[] suits, int[] values) {
+        //declare new arraylist of cards
+        cards = new ArrayList<Card>();
+        cardsLeft = 52;
+
         //creates a new card with a rank, suit, and value
         //from the arrays passed in as parameters
         for(int i = 0; i<ranks.length; i++){
